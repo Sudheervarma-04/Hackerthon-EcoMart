@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <title>Home Page</title>
+</head>
+<style>
+    .nav-pills{
+        margin-top: 50%;
+        background-color: #000000;
+        }
+        .pil{
+            /* padding: 30px !important; */
+        background-color: #000000 !important;
+        color: #edf2f4 !important;
+        font-size: 24px !important;
+        }
+        .active{
+          /* padding: 30px !important; */
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-weight: bold;
+        }
+        .pil:active,:focus{
+            padding: 30px !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-weight: bold;
+        }
+        /* .active1{
+          padding: 30px !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-weight: bold;
+        }
+        .active1:blank{
+          padding: 30px !important;
+        background-color: #ff1212 !important;
+        color: #000000 !important;
+        font-weight: bold;
+        } */
+        
+        .inside-img{
+           height: 20vh;
+            /* width: 16.5vw; */ 
+            border-radius: 10px;
+            align-items: center;
+        }
+        
+        .a{
+          text-decoration: none;
+          background-color: transparent;
+        }
+        h1{
+
+        text-align: center;
+          color: #ff0000;
+        }
+        .container{
+          background-color: #000000;
+        }
+    
+    
+    
+
+ @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+    
+    @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+    .fa-2x {
+    font-size: 2em;
+    }
+    .fa {
+    position: relative;
+    /* display: table-cell; */
+    width:30px;
+    height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+    }
+    
+    
+    .main-menu:hover,nav.main-menu.expanded {
+    width:250px;
+    overflow:visible;
+    }
+    
+    .main-menu {
+    background:#000000;
+    border-right:1px solid #e5e5e5;
+    position:fixed;
+    top:0;
+    bottom:0;
+    height:100%;
+    left:0;
+    width:42px;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    /* -webkit-transform:translateZ(0) scale(1,1); */
+    z-index:1000;
+    }
+    
+    .main-menu>ul {
+    margin:7px 0;
+    }
+    
+    .main-menu li {
+    position:relative;
+    display:block;
+    width:250px;
+    }
+    
+    .main-menu li>a {
+    position:relative;
+    display:table;
+    border-collapse:collapse;
+    border-spacing:0;
+    color:#999;
+     font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    /* -webkit-transform:translateZ(0) scale(1,1); */
+    -webkit-transition:all .1s linear;
+    transition:all .1s linear;
+      
+    }
+    
+    .main-menu .nav-icon {
+    position:relative;
+    display:table-cell;
+    width:60px;
+    height:36px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:18px;
+    }
+    
+    .main-menu .nav-text {
+    font-size: 24px;
+    position:relative;
+    display:table-cell;
+    color: #f8f9fa;
+    width:190px;
+      font-family: 'Titillium Web', sans-serif;
+    }
+    
+    .main-menu>ul.logout {
+    position:absolute;
+    left:0;
+    bottom:0;
+    }
+    
+    .no-touch .scrollable.hover {
+    overflow-y:hidden;
+    }
+    
+    .no-touch .scrollable.hover:hover {
+    overflow-y:auto;
+    overflow:visible;
+    }
+    
+    a:hover,a:focus {
+    text-decoration:none;
+    }
+    
+    nav {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    }
+    
+    nav ul,nav li {
+    outline:0;
+    margin:0;
+    padding:0;
+    }
+    .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+    color:#fff;
+    background-color:#000000;
+    }
+    /* .area {
+    float: left;
+    background: #e2e2e2;
+    width: 100%;
+    height: 100%;
+    } */
+    @font-face {
+      font-family: 'Titillium Web';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+    }
+    
+    
+    
+    .col-3 {
+        width: calc(25% - 20px);
+        float: left;
+        margin-right: 20px;
+    }
+    .ma {
+      
+        padding-left: 6vw;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+
+    }    
+    
+    .logo{
+        height: 10vh;
+  
+    }
+    .he{
+        background-color: #546357;
+    }
+    .search-prop{
+        background-color: rgb(255, 255, 255);
+        width: 40vw;
+        height: 7vh;
+        border:1px solid rgb(203, 203, 201);
+        border-radius: 5px;
+
+      
+    }
+    .search-svg{
+        background-color:#d88e1e;
+        color:white;
+    }
+
+
+
+
+    
+</style>
+<body>
+    <div class="">
+        <div class="d-flex flex-row justify-content-start  he fixed-top">
+              <img src="./logo.jpg" class="logo">
+
+              <div class="input-group d-flex flex-row justify-content-center pt-2">
+                <input type="text" class="search-prop" id="inlineFormInputGroupUsername2" placeholder="Search Products">
+                <div class="">
+                    <div class="input-group-text search-svg"><i class="bi bi-search"></i><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="fixed-top d-flex flex-row justify-content-end">
+                <button type="button" class="btn btn-success mx-3 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-cart4"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                      </svg>
+            </button>
+            </div>
+            </div>
+      
+         
+            <nav class="main-menu mt-5 ">
+                <ul>
+                    <li class="has-subnav mb-4 px-1">
+                        <a href="./homepage.html">
+                            <i class="bi bi-house-door-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                              </svg>
+                            <span class="nav-text pt-4 px-3">
+                          Home
+                            </span>
+                        </a>
+                      
+                    </li>
+                    <!-- <li class="has-subnav mb-4 px-1">
+                        <a href="./grocery.html">
+                            <i class="bi bi-basket-fill"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                                <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+                              </svg>
+                            <span class="nav-text pt-3 px-3">
+                        Grocery
+                            </span>
+                        </a>
+                        
+                    </li> -->
+                    <li class="has-subnav mb-4 px-1">
+                        <a href="./gardening.html">
+                            <i class="bi bi-tree-fill"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-tree-fill" viewBox="0 0 16 16">
+                                <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777z"/>
+                              </svg>
+                            <span class="nav-text pt-3 px-3">
+                                 Gardening
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <li class="has-subnav mb-3 px-1">
+                        <a href="./fashion.html">
+                            <i class="bi bi-person-standing-dress"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-standing-dress" viewBox="0 0 16 16">
+                                <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 12.25V12h1v3.25a.75.75 0 0 0 1.5 0V12h1l-1-5v-.215a.285.285 0 0 1 .56-.078l.793 2.777a.711.711 0 1 0 1.364-.405l-1.065-3.461A3 3 0 0 0 8.784 3.5H7.216a3 3 0 0 0-2.868 2.118L3.283 9.079a.711.711 0 1 0 1.365.405l.793-2.777a.285.285 0 0 1 .56.078V7l-1 5h1v3.25a.75.75 0 0 0 1.5 0Z"/>
+                              </svg>
+                            <span class="nav-text pt-3 px-3">
+                                Fashion
+                            </span>
+                        </a>
+                       
+                    </li>
+                    <li class="has-subnav mb-4 px-1">
+                        <a href="./decors.html">
+                           <i class="bi bi-flower1"></i>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-flower1" viewBox="0 0 16 16">
+                            <path d="M6.174 1.184a2 2 0 0 1 3.652 0A2 2 0 0 1 12.99 3.01a2 2 0 0 1 1.826 3.164 2 2 0 0 1 0 3.652 2 2 0 0 1-1.826 3.164 2 2 0 0 1-3.164 1.826 2 2 0 0 1-3.652 0A2 2 0 0 1 3.01 12.99a2 2 0 0 1-1.826-3.164 2 2 0 0 1 0-3.652A2 2 0 0 1 3.01 3.01a2 2 0 0 1 3.164-1.826M8 1a1 1 0 0 0-.998 1.03l.01.091q.017.116.054.296c.049.241.122.542.213.887.182.688.428 1.513.676 2.314L8 5.762l.045-.144c.248-.8.494-1.626.676-2.314.091-.345.164-.646.213-.887a5 5 0 0 0 .064-.386L9 2a1 1 0 0 0-1-1M2 9l.03-.002.091-.01a5 5 0 0 0 .296-.054c.241-.049.542-.122.887-.213a61 61 0 0 0 2.314-.676L5.762 8l-.144-.045a61 61 0 0 0-2.314-.676 17 17 0 0 0-.887-.213 5 5 0 0 0-.386-.064L2 7a1 1 0 1 0 0 2m7 5-.002-.03a5 5 0 0 0-.064-.386 16 16 0 0 0-.213-.888 61 61 0 0 0-.676-2.314L8 10.238l-.045.144c-.248.8-.494 1.626-.676 2.314-.091.345-.164.646-.213.887a5 5 0 0 0-.064.386L7 14a1 1 0 1 0 2 0m-5.696-2.134.025-.017a5 5 0 0 0 .303-.248c.184-.164.408-.377.661-.629A61 61 0 0 0 5.96 9.23l.103-.111-.147.033a61 61 0 0 0-2.343.572c-.344.093-.64.18-.874.258a5 5 0 0 0-.367.138l-.027.014a1 1 0 1 0 1 1.732zM4.5 14.062a1 1 0 0 0 1.366-.366l.014-.027q.014-.03.036-.084a5 5 0 0 0 .102-.283c.078-.233.165-.53.258-.874a61 61 0 0 0 .572-2.343l.033-.147-.11.102a61 61 0 0 0-1.743 1.667 17 17 0 0 0-.629.66 5 5 0 0 0-.248.304l-.017.025a1 1 0 0 0 .366 1.366m9.196-8.196a1 1 0 0 0-1-1.732l-.025.017a5 5 0 0 0-.303.248 17 17 0 0 0-.661.629A61 61 0 0 0 10.04 6.77l-.102.111.147-.033a61 61 0 0 0 2.342-.572c.345-.093.642-.18.875-.258a5 5 0 0 0 .367-.138zM11.5 1.938a1 1 0 0 0-1.366.366l-.014.027q-.014.03-.036.084a5 5 0 0 0-.102.283c-.078.233-.165.53-.258.875a61 61 0 0 0-.572 2.342l-.033.147.11-.102a61 61 0 0 0 1.743-1.667c.252-.253.465-.477.629-.66a5 5 0 0 0 .248-.304l.017-.025a1 1 0 0 0-.366-1.366M14 9a1 1 0 0 0 0-2l-.03.002a5 5 0 0 0-.386.064c-.242.049-.543.122-.888.213-.688.182-1.513.428-2.314.676L10.238 8l.144.045c.8.248 1.626.494 2.314.676.345.091.646.164.887.213a5 5 0 0 0 .386.064zM1.938 4.5a1 1 0 0 0 .393 1.38l.084.035q.108.045.283.103c.233.078.53.165.874.258a61 61 0 0 0 2.343.572l.147.033-.103-.111a61 61 0 0 0-1.666-1.742 17 17 0 0 0-.66-.629 5 5 0 0 0-.304-.248l-.025-.017a1 1 0 0 0-1.366.366m2.196-1.196.017.025a5 5 0 0 0 .248.303c.164.184.377.408.629.661A61 61 0 0 0 6.77 5.96l.111.102-.033-.147a61 61 0 0 0-.572-2.342c-.093-.345-.18-.642-.258-.875a5 5 0 0 0-.138-.367l-.014-.027a1 1 0 1 0-1.732 1m9.928 8.196a1 1 0 0 0-.366-1.366l-.027-.014a5 5 0 0 0-.367-.138c-.233-.078-.53-.165-.875-.258a61 61 0 0 0-2.342-.572l-.147-.033.102.111a61 61 0 0 0 1.667 1.742c.253.252.477.465.66.629a5 5 0 0 0 .304.248l.025.017a1 1 0 0 0 1.366-.366m-3.928 2.196a1 1 0 0 0 1.732-1l-.017-.025a5 5 0 0 0-.248-.303 17 17 0 0 0-.629-.661A61 61 0 0 0 9.23 10.04l-.111-.102.033.147a61 61 0 0 0 .572 2.342c.093.345.18.642.258.875a5 5 0 0 0 .138.367zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                          </svg>
+                            <span class="nav-text pt-3 px-3">
+                               Home Decors
+                            </span>
+                        </a>
+                    </li> 
+                    <li class="has-subnav mb-4 px-1">
+                        <a href="./care.html">
+                     <img src="https://cdn-icons-png.flaticon.com/512/7075/7075766.png" style="height: 36; width:36px; background-color:rgb(255, 255, 255);">
+                            <span class="nav-text pt-3 px-3">
+                           Care Products
+                            </span>
+                        </a>
+                    </li>
+            </nav>
+        
+        </div>
+        <hr>
+        <div class="main-bgimg pt-4">
+            <div class="row">
+                <div class="col-3 ma">
+                    <h1>Groceries</h1>
+                    Choosing sustainable groceries helps reduce pollution by sourcing locally, using organic farming, minimizing packaging, and supporting eco-friendly practices. It’s a great way to make a positive environmental impact!
+
+                    <h3 class="pt-3">Key Statistics:</h3>
+                    <ul>
+                        <li>Local and seasonal produce can reduce food miles by up to 85%, significantly lowering greenhouse gas emissions.</li>
+                        <li>Eco-friendly packaging can decrease waste by up to 50%, with a 32% reduction in plastic waste when using biodegradable alternatives.</li>
+                        <li>Fair trade practices ensure over 1.66 million farmers and workers in 73 countries receive fair wages and better working conditions, promoting sustainable livelihoods.</li>
+                        <li>Over 60% of clothing ends up in incinerators or landfills within a year of being produced.</li>
+                    </ul>
+                </div>
+                <div class="col-9">
+                    <img src="./groceries.jpg" class="big-img-prop">
+                    <div class="div-prop">
+                        <h3>Grocery </h3>
+                    </div>
+                    <div class="row">
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/100-certified-organic-virgin-cold-pressed-coconut-oil-140-03359-tcp-vco-200-hair-oil-258389_1600x.jpg?v=1682959703" class="img-prop">
+                            <div class="mat"><p class="para-prop">Organic Virgin Cold Pressed Coconut Oil 100% Certified</p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>199</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/files/satmya-gulkand-resized_700x.jpg?v=1712135759" class="img-prop">
+                            <div class="mat"><p class="para-prop">Homemade Gulkand with Zero Preservatives
+                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>799</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/chamomile-tea-organic-naturally-shade-dried-flowers-50g-verified-sustainable-products-on-brown-living-608868_700x.jpg?v=1697802451" class="img-prop">
+                            <div class="mat"><p class="para-prop">Chamomile Tea- Organic & Naturally Shade Dried Flowers-50g</p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>199</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>699</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/millet-granola-with-dates-almonds-380g-026-00808-vro000058-cereal-meusli-brown-living-594856_700x.jpg?v=1682964613" class="img-prop">
+                            <div class="mat"><p class="para-prop">Millet Granola with Dates & Almonds - 380g</p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>159</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>499</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/wild-acacia-honey-made-in-small-batches-honey-and-spice-sustainable-honey-syrups-brown-living-wah250gm-705304_700x.jpg?v=1710884627 " class="img-prop">
+                            <div class="mat"><p class="para-prop">Wild Acacia Honey | Made In Small Batches
+                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>699</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1399</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/honey-soaked-amla-honey-and-spice-sustainable-confectionaries-brown-living-hsa350gm-497675_700x.jpg?v=1710878569 " class="img-prop">
+                            <div class="mat"><p class="para-prop">Honey Soaked Amla
+                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>99</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>299</p>
+                            </div>
+                            <button class="butt-prop text-center">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3">
+                            <img src="https://brownliving.in/cdn/shop/files/mint-ginger-lemon-squash-satmya-sustainable-health-energy-drinks-brown-living-ginge-600ml-529968_700x.jpg?v=1712150922 " class="img-prop">
+                            <div class="mat"><p class="para-prop">Mint Ginger Lemon Squash
+                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>499</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/a2-desi-cow-ghee-500-ml-500-ml-verified-sustainable-products-on-brown-living-272727_700x.jpg?v=1698232990" class="img-prop">
+                            <div class="mat"> <p class="para-prop">A2 Desi Cow Ghee - 500 ml + 500 ml
+                            </p>
+                            </div><div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>799</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1599</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/a2-bilona-ghee-hand-churned-from-curd-1000-ml-196-06901-a2g-1000ml-ghee-119666_700x.jpg?v=1700203138 " class="img-prop">
+                            <div class="mat"><p class="para-prop">A2 Bilona Ghee - Hand Churned from Curd | 1000 ml
+                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>299</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>799</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/files/satmya-chyawanprash-web-1-resized_700x.jpg?v=1712131201 " class="img-prop">
+                            <div class="mat"><p class="para-prop">Elixir of Life- Immunity Boosting Chyawanprash
+                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>799</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        
+                        
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/ginger-cranberry-cookies-pack-of-6-sustainable-products-on-brown-living-371193_700x.jpg?v=1690205897" class="img-prop">
+                            <div class="mat"><p class="para-prop">Ginger-Cranberry Cookies - Pack of 6</p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>899</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/shimmmi-kombucha-sparkling-fermented-tea-color-me-all-box-box-of-6-250ml-x-6-sustainable-products-on-brown-living-799751_700x.jpg?v=1688403209 " class="img-prop">
+                            <div class="mat"><p class="para-prop">Kombucha - Sparkling Fermented Tea | Color-me-all Box | Box of 6 (250ml x 6)                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>399</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3">
+                            <img src="https://brownliving.in/cdn/shop/products/a2-bilona-ghee-hand-churned-from-curd-500-ml-196-08538-a2g-500ml-ghee-797047_700x.jpg?v=1682959890 " class="img-prop">
+                            <div class="mat"><p class="para-prop">A2 Bilona Ghee - Hand Churned from Curd - 500 ml</p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>799</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/ginger-jaggery-chai-syrup-i-organic-jaggery-ginger-concoction-sugarfreelicious-sustainable-honey-syrups-brown-living-ginger-jaggery-chai-syrup-113-755989_700x.jpg?v=1710766533" class="img-prop">
+                            <div class="mat"><p class="para-prop">Ginger Jaggery Chai Syrup I Organic Jaggery & Ginger Concoction                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>599</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>1999</p>
+                            </div>
+                            <button class="butt-prop text-center">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/100-raw-himalayan-orchard-honey-verified-sustainable-products-on-brown-living-501915_700x.jpg?v=1697800759 " class="img-prop">
+                            <div class="mat"><p class="para-prop">100% Raw Himalayan Orchard Honey                            </p></div>
+                            <div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>299</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>999</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                        <div class="div-prop col-3 text-center">
+                            <img src="https://brownliving.in/cdn/shop/products/healthy-hibiscus-blend-tea-box-wt004-tea-brown-living-784464_700x.jpg?v=1682963280" class="img-prop">
+                            <div class="mat"> <p class="para-prop">Healthy Hibiscus Blend Tea Box</p>
+                            </div><div class="d-flex flex-row">
+                                <p class="rupee-prop "><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>199</p>
+                                <p class="rupee-prop-2 ml-1"><i class="bi bi-currency-rupee"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 1 10 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>699</p>
+                            </div>
+                            <button class="butt-prop">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .img-prop{
+        width:13vw ;
+        height:30vh ;
+      
+    }
+    .butt-prop{
+        background-color:#546357;
+        color:white;
+        font-weight: bold;
+        font-size: 15px;
+        width:166px;
+        height:35px;
+        border:0px;
+        border-radius: 5px;
+    }
+    .div-prop{
+        border:1px solid rgb(211, 211, 211);
+        padding:10px;
+        padding-left:20px;
+    }
+    .para-prop{
+        font-weight: bold;
+        font-size: 15px;
+
+    }
+    .bag-color{
+        background-color: #546357;
+        color:white;
+    }
+    .rupee-prop{
+        font-size: 20px;
+        color:#19486A;
+        font-weight: lighter;
+        
+    }
+    .rupee-prop-2{
+        font-size: 16px;
+        color:#19486A;
+        font-weight: lighter;
+        text-decoration:line-through;
+    }
+    .big-img-prop{
+        width:943px;
+    }
+    .mat{
+        height: 15vh !important;
+    }
+    .eco-img-prop{
+        width:90px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+    .main-h1-prop{
+        font-size: 15px;
+    }
+    .search-svg{
+        background-color: yellow;
+    }
+</style>
+</html>
